@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Public Variables
+    //Public variables
     public float moveSpeed = 5f;
     public float jumpHeight = 10f;
     public float jumpTime;
     
 
-    //Private Variables
+    //Private variables
     private float groundCheckRadius = 0.3f;
     private float jumpTimeCounter;
     private bool isGrounded;
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //Assign variables
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         groundCheck = GameObject.Find("GroundCheck").transform;
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
             jump = false;
         }
 
-        //Animation Parametres
+        //Animation parametres
         animator.SetFloat("Horizontal", moveInput.x);
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
         animator.SetBool("Grounded", isGrounded);
@@ -65,8 +66,10 @@ public class PlayerController : MonoBehaviour
             jump = true;
         }
 
-        if(Input.GetButton("Jump") && isJumping)
+        //Check if jump button is held down after jumping
+        if(Input.GetButton("Jump") && isJumping) //This is done outside of FixedUpdate cause it wouldn't work, will come back to it later
         {
+            //Add more force to the jump over a given time
             if(jumpTimeCounter > 0)
             {
                 rb.velocity = Vector2.up * jumpHeight;
@@ -78,6 +81,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //Check for jump button release
         if(Input.GetButtonUp("Jump"))
         {
             isJumping = false;
