@@ -18,13 +18,15 @@ public class PlayerController : MonoBehaviour
     //Components
     private Rigidbody2D rb;
     private Animator animator;
-    private Transform feet;
+    private Transform groundCheck;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        feet = GameObject.Find("GroundCheck").transform;
+        groundCheck = GameObject.Find("GroundCheck").transform;
+        groundLayer = 8;
+        Debug.Log(LayerMask.NameToLayer("Ground"));
     }
 
     void FixedUpdate()
@@ -40,14 +42,15 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("Horizontal", moveInput.x);
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
+        animator.SetBool("Grounded", isGrounded);
     }
 
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(feet.position, groundCheckRadius, groundLayer);
-        moveInput.x = Input.GetAxisRaw("Horizontal"); 
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        moveInput.x = Input.GetAxisRaw("Horizontal");
 
-        if(Input.GetButtonDown("Jump"))
+        if(isGrounded && Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
