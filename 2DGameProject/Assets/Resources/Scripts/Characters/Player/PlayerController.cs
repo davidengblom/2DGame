@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     //Public variables
     [Header("Variables")]
     public float moveSpeed = 5f;
+    public float stepInterval = 0.1f;
     public float jumpHeight = 10f;
     public float jumpTime;
     
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         groundCheck = GameObject.Find("GroundCheck").transform;
         groundLayer = LayerMask.GetMask("Ground");
+
+        StartCoroutine(PlayWalkSound()); //As long as the character lives, it checks if they are moving, playing the sound if they are
     }
 
     void FixedUpdate()
@@ -51,8 +54,7 @@ public class PlayerController : MonoBehaviour
         if(doJump)
         {
             //Play the jump sound
-            audioSource.clip = jumpSound;
-            audioSource.Play();
+            audioSource.PlayOneShot(jumpSound);
 
             //Have the player jump
             isJumping = true;
@@ -98,6 +100,25 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonUp("Jump"))
         {
             isJumping = false;
+        }
+    }
+
+    private IEnumerator PlayWalkSound()
+    {
+        while(true)
+        {
+            //If the player is on the ground and moving left or right
+            if(isGrounded && moveInput.x >= 1 || isGrounded && moveInput.x <= -1)
+            {
+                audioSource.PlayOneShot(walkSound);
+                yield return new WaitForSeconds(stepInterval);
+            }
+            else
+            {
+                yield return 0;
+            }
+            
+
         }
     }
 }

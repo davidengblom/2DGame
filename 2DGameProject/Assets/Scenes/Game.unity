@@ -499,6 +499,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: a245934ab9dfbc9479f7ebde7b8733ad, type: 3}
   walkSound: {fileID: 8300000, guid: d1b17d1d929fe22439ccb524a8e784f8, type: 3}
   moveSpeed: 5
+  stepInterval: 0.1
   jumpHeight: 7
   jumpTime: 0.2
 --- !u!82 &1504594936
