@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Weapon { Fists, Bat, Gun }
+
 public class PlayerController : MonoBehaviour
 {
     //Audio clips
@@ -9,8 +11,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip walkSound;
 
+    //Current Weapon
+    [Header("Weapon")]
+    public Weapon currentWeapon; //Fix this shit
+
     //Public variables
-    [Header("Variables")]
+    [Header("Movement Variables")]
     public float moveSpeed = 5f;
     public float stepInterval = 0.1f;
     public float jumpHeight = 10f;
@@ -42,6 +48,8 @@ public class PlayerController : MonoBehaviour
         groundCheck = GameObject.Find("GroundCheck").transform;
         groundLayer = LayerMask.GetMask("Ground");
 
+        currentWeapon = Weapon.Fists;
+
         StartCoroutine(PlayWalkSound()); //As long as the character lives, it checks if they are moving, playing the sound if they are
     }
 
@@ -53,8 +61,7 @@ public class PlayerController : MonoBehaviour
         //Jumping
         if(doJump)
         {
-            //Play the jump sound
-            audioSource.PlayOneShot(jumpSound);
+            audioSource.PlayOneShot(jumpSound); //Play the jump sound
 
             //Have the player jump
             isJumping = true;
@@ -67,6 +74,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Horizontal", moveInput.x);
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
         animator.SetBool("Grounded", isGrounded);
+        
     }
 
     void Update()
@@ -100,6 +108,18 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonUp("Jump"))
         {
             isJumping = false;
+        }
+        
+        if(Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon != Weapon.Fists)
+        {
+            currentWeapon = Weapon.Fists;
+            animator.SetTrigger("Fists");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha2) && currentWeapon != Weapon.Gun)
+        {
+            currentWeapon = Weapon.Gun;
+            animator.SetTrigger("Gun");
         }
     }
 
