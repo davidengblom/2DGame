@@ -12,8 +12,4 @@ Boss Fights
 ```
 
 ### Links
-Useful stuff.
-
-```
 [Trello](https://www.google.com "Trello Board")
-```
