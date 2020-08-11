@@ -240,12 +240,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e22c507ef9c2a41afdb4a7ee78a869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 8923959204297082981}
-  movement: {fileID: 428879545646251907}
-  sound: {fileID: 2355960779140794523}
+  walkSound: {fileID: 8300000, guid: d1b17d1d929fe22439ccb524a8e784f8, type: 3}
+  jumpSound: {fileID: 8300000, guid: a245934ab9dfbc9479f7ebde7b8733ad, type: 3}
   animator: {fileID: 147687073922334234}
   groundCheck: {fileID: 147687072226693310}
   moveSpeed: 5
+  stepInterval: 0.1
+  jumpHeight: 7
+  jumpTime: 0.2
 --- !u!114 &8923959204297082981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,8 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1baed062ba3fc445a0dfaf7fc8dfbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 147687073018463289}
-  moveInput: {x: 0, y: 0}
 --- !u!114 &428879545646251907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,8 +272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c121ca0f4169e498d94304cf75f14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 147687073018463289}
-  moveSpeed: 5
 --- !u!114 &2355960779140794523
 MonoBehaviour:
   m_ObjectHideFlags: 0

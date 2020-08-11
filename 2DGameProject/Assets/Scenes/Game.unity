@@ -195,6 +195,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b9f6a462c6859e4ea1bdd5fa9f2a17f, type: 3}
+--- !u!1 &131754080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147687073018463292, guid: ed1be898447da874e8e1bedcf9bb3448,
+    type: 3}
+  m_PrefabInstance: {fileID: 147687072335957966}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &131754090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131754080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d750a72f81cb9cd4e8126bc85bdd0044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &508441861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 344977042239894084, guid: 6b9f6a462c6859e4ea1bdd5fa9f2a17f,
@@ -655,6 +673,16 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 147687073018463289, guid: ed1be898447da874e8e1bedcf9bb3448,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a245934ab9dfbc9479f7ebde7b8733ad, type: 3}
+    - target: {fileID: 147687073018463289, guid: ed1be898447da874e8e1bedcf9bb3448,
+        type: 3}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d1b17d1d929fe22439ccb524a8e784f8, type: 3}
     - target: {fileID: 147687073018463292, guid: ed1be898447da874e8e1bedcf9bb3448,
         type: 3}
       propertyPath: m_Name
