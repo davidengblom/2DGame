@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerFistsIdle
+  m_Name: PlayerGunIdleLeft
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: eb1d6e8edc37bcb48bd1cfae830060ef, type: 3}
+      value: {fileID: 21300000, guid: 40fe76270a6f9314185a453d2b995e74, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 5ccf52a32e50cab48a9bbf8052936e63, type: 3}
+      value: {fileID: 21300000, guid: d148060dddb5447438d900ca54a7ffb2, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: eb1d6e8edc37bcb48bd1cfae830060ef, type: 3}
-    - {fileID: 21300000, guid: 5ccf52a32e50cab48a9bbf8052936e63, type: 3}
+    - {fileID: 21300000, guid: 40fe76270a6f9314185a453d2b995e74, type: 3}
+    - {fileID: 21300000, guid: d148060dddb5447438d900ca54a7ffb2, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

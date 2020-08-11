@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public enum Weapon { Fists, Bat, Gun }
 
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+
         //Move the player
         rb.velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
 
@@ -79,6 +82,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Vector2 playerScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        if(Input.mousePosition.x < playerScreenPosition.x)
+        {
+            animator.SetBool("FacingLeft", true);
+            animator.SetBool("FacingRight", false);
+        }
+        else
+        {
+            animator.SetBool("FacingRight", true);
+            animator.SetBool("FacingLeft", false);
+        }
+
         //Check for ground collision and movement input
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         moveInput.x = Input.GetAxisRaw("Horizontal");
