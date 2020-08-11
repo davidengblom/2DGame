@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Calculate which direction the character should be facing based on mouse position
         Vector2 playerScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
         if(Input.mousePosition.x < playerScreenPosition.x)
         {
@@ -125,12 +126,12 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
         
+        //Check for key input to switch weapons
         if(Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon != Weapon.Fists)
         {
             currentWeapon = Weapon.Fists;
             animator.SetTrigger("Fists");
         }
-
         if(Input.GetKeyDown(KeyCode.Alpha2) && currentWeapon != Weapon.Gun)
         {
             currentWeapon = Weapon.Gun;
@@ -152,8 +153,6 @@ public class PlayerController : MonoBehaviour
             {
                 yield return 0;
             }
-            
-
         }
     }
 }
