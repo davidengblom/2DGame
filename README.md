@@ -12,4 +12,4 @@ Boss Fights
 ```
 
 ### Links
-[Trello](https://www.google.com "Trello Board")
+[Trello](https://trello.com/b/F5acTKeA/gurras-field-development "Trello Board")
