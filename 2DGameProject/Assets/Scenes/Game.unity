@@ -213,6 +213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d750a72f81cb9cd4e8126bc85bdd0044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &148375138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8989583264617277069, guid: ed1be898447da874e8e1bedcf9bb3448,
+    type: 3}
+  m_PrefabInstance: {fileID: 147687072335957966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &508441861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 344977042239894084, guid: 6b9f6a462c6859e4ea1bdd5fa9f2a17f,
@@ -683,6 +689,11 @@ PrefabInstance:
       propertyPath: walkSound
       value: 
       objectReference: {fileID: 8300000, guid: d1b17d1d929fe22439ccb524a8e784f8, type: 3}
+    - target: {fileID: 147687073018463289, guid: ed1be898447da874e8e1bedcf9bb3448,
+        type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 148375138}
     - target: {fileID: 147687073018463292, guid: ed1be898447da874e8e1bedcf9bb3448,
         type: 3}
       propertyPath: m_Name

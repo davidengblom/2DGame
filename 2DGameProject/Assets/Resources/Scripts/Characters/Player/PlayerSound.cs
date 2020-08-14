@@ -7,9 +7,6 @@ public class PlayerSound : MonoBehaviour
     //Main Player Script
     internal PlayerController player;
 
-    //Local Variables
-    internal bool playJumpSound;
-
     void Start()
     {
         //Assign Components
@@ -19,20 +16,11 @@ public class PlayerSound : MonoBehaviour
         StartCoroutine(PlayWalkSound());
     }
 
-    void FixedUpdate()
-    {
-        //If jump input is pressed, play the jump sound
-        if(playJumpSound)
-        {
-            player.audioSource.PlayOneShot(player.jumpSound);
-            playJumpSound = false;
-        }
-    }
-
     private IEnumerator PlayWalkSound() //Refer to the start function for information
     {
         while(true)
         {
+            //If the player is on the ground and moving left or right
             if(player.input.grounded && player.input.moveInput.x >= 1 || player.input.grounded && player.input.moveInput.x <= -1)
             {
                 player.audioSource.PlayOneShot(player.walkSound);
@@ -43,5 +31,15 @@ public class PlayerSound : MonoBehaviour
                 yield return 0;
             }
         }
+    }
+
+    internal void PlayJumpSound()
+    {
+        player.audioSource.PlayOneShot(player.jumpSound);
+    }
+
+    internal void PlayPunchSound()
+    {
+        player.audioSource.PlayOneShot(player.punchSound);
     }
 }

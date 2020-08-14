@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump
         if(doJump)
         {
-            player.sound.playJumpSound = true;
+            player.sound.PlayJumpSound();
             jumping = true;
             jumpTimeCounter = player.jumpTime;
             player.rb.velocity = Vector2.up * player.jumpHeight;
