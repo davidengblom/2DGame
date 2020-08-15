@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerSound : MonoBehaviour
 {
-    //Main Player Script
-    internal PlayerController player;
+    private PlayerController player; //Main Player Script
 
     void Start()
     {
-        //Assign Components
         player = GetComponent<PlayerController>();
 
         //While the character is alive, play the walking sound if he moves

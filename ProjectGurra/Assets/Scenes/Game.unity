@@ -694,6 +694,11 @@ PrefabInstance:
       propertyPath: attackPoint
       value: 
       objectReference: {fileID: 148375138}
+    - target: {fileID: 147687073018463289, guid: ed1be898447da874e8e1bedcf9bb3448,
+        type: 3}
+      propertyPath: meleeRange
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 147687073018463292, guid: ed1be898447da874e8e1bedcf9bb3448,
         type: 3}
       propertyPath: m_Name

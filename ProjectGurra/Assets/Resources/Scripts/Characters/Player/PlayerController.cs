@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 internal enum Weapon { Fists, Bat, Gun }
 
@@ -30,6 +27,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] internal float jumpHeight = 7f;
     [SerializeField] internal float jumpTime = 0.2f;
     [SerializeField] internal float attackRate = 2f;
+    [SerializeField] internal float meleeRange = 0.5f;
+
+    [Header("Weapon Properties")]
+    [SerializeField] internal int fistsDamage = 10;
+    [SerializeField] internal int batDamage = 20;
+    [SerializeField] internal int gunDamage = 40;
 
     //Local Variables
     internal Weapon currentWeapon;
@@ -51,9 +54,5 @@ public class PlayerController : MonoBehaviour
         combat = GetComponent<PlayerCombat>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-        groundLayer = LayerMask.GetMask("Ground");
-
-        //Starter Weapon
-        currentWeapon = Weapon.Fists;
     }
 }

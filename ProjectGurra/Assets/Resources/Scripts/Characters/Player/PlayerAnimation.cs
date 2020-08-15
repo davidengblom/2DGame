@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    //Main Player Script
-    private PlayerController player;
+    private PlayerController player; //Main Player Script
 
     internal bool facingLeft;
     internal bool facingRight;
 
     void Start()
     {
-        //Assign Components
         player = GetComponent<PlayerController>();
     }
 
@@ -50,6 +48,10 @@ public class PlayerAnimation : MonoBehaviour
 
         facingRight = true;
         facingLeft = false;
+
+        player.attackPoint.position = new Vector3(player.transform.position.x + 0.25f, player.transform.position.y, player.transform.position.z);
+        player.attackPoint.rotation = Quaternion.Euler(0, 0, 0);
+        
     }
 
     internal void FaceLeft() //Flip the Character Left
@@ -59,6 +61,9 @@ public class PlayerAnimation : MonoBehaviour
 
         facingLeft = true;
         facingRight = false;
+
+        player.attackPoint.position = new Vector3(player.transform.position.x + -0.25f, player.transform.position.y, player.transform.position.z);
+        player.attackPoint.rotation = Quaternion.Euler(0, 180, 0);
     }
     #endregion
 }

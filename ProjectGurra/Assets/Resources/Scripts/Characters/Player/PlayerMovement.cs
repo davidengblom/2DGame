@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Main Player Script
-    private PlayerController player;
+    private PlayerController player; //Main Player Script
 
     //Local Variables
     internal bool doJump;
@@ -15,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        //Assign Components
         player = GetComponent<PlayerController>();
     }
 

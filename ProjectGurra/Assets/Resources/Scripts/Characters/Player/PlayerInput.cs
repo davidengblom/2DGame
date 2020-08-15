@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    //Main Player Script
-    private PlayerController player;
+    private PlayerController player; //Main Player Script
 
     //Local Variables
     internal Vector2 moveInput;
@@ -13,8 +12,9 @@ public class PlayerInput : MonoBehaviour
 
     void Start()
     {
-        //Assign Components
-        player = GetComponent<PlayerController>(); 
+        player = GetComponent<PlayerController>();
+
+        player.groundLayer = LayerMask.GetMask("Ground"); //Ground Layer
     }
 
     void Update()
